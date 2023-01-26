@@ -9,7 +9,6 @@ const Home = () => {
       <Title>
         <h1>infobook!</h1>
         <TextField
-          fullWidth
           id="outlined-basic"
           label="Search a book"
           variant="outlined"
