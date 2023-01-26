@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import background from '../../images/svg/background.svg'
 
 export const Title = styled.h1`
   font-size: 14px;
@@ -9,5 +10,6 @@ export const Title = styled.h1`
 
 export const Wrapper = styled.section`
   padding: 2em;
-  background: #14213d;
+  // background: #14213d;
+  background-image: url(${background});
 `
