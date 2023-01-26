@@ -7,7 +7,7 @@ const Home = () => {
     <Wrapper>
       <Title>
         <img width={'100px'} height={'100px'} src={logo} />
-        <h1>CLARINHA, EU ACREDITO!</h1>
+        <h1>infobook!</h1>
       </Title>
     </Wrapper>
   )
