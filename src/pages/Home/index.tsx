@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { ContainerSearch, Title, Wrapper } from './styles'
-import { Col, Form, Row } from 'react-bootstrap'
+import {
+  ClearButton,
+  ContainerButton,
+  ContainerSearch,
+  FindButton,
+  Title,
+  Wrapper,
+} from './styles'
+import { Button, Col, Form, Row } from 'react-bootstrap'
 import { getBook } from '../../services/request'
 
 const Home = () => {
@@ -16,14 +23,15 @@ const Home = () => {
     'OCLC',
   ]
 
-  useEffect(() => {
+  function findBook() {
     const result = getBook('intitle', 'teste')
     console.log('response', result)
-  }, [])
+  }
+
   return (
     <Wrapper>
       <ContainerSearch>
-        <Title>infobook!</Title>
+        <Title>infobook!📚</Title>
         <Form>
           <Row>
             <Col>
@@ -38,6 +46,12 @@ const Home = () => {
             </Col>
           </Row>
         </Form>
+        <ContainerButton>
+          <Col>
+            <FindButton onClick={() => findBook()}>Find 🔎</FindButton>
+            <ClearButton>Clear 💣</ClearButton>
+          </Col>
+        </ContainerButton>
       </ContainerSearch>
     </Wrapper>
   )
