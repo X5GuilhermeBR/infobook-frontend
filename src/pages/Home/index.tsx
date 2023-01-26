@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { ContainerSearch, Title, Wrapper } from './styles'
 import { Col, Form, Row } from 'react-bootstrap'
-import Container from 'react-bootstrap/esm/Container'
+import { getBook } from '../../services/request'
 
 const Home = () => {
   const [currentOption, setCurrentOption] = useState('')
+
   const options = [
     'Title',
     'Author',
@@ -16,8 +17,9 @@ const Home = () => {
   ]
 
   useEffect(() => {
-    console.log('current', currentOption)
-  }, [currentOption, setCurrentOption])
+    const result = getBook('intitle', 'teste')
+    console.log('response', result)
+  }, [])
   return (
     <Wrapper>
       <ContainerSearch>
