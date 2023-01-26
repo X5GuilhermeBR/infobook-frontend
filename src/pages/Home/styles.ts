@@ -10,7 +10,7 @@ export const Title = styled.h1`
 
 export const Wrapper = styled.section`
   padding: 2em;
-  background: #14213d;
+  background: #14213a;
   /* background-image: url(${background}); */
   min-height: 100%;
   width: 100%;
