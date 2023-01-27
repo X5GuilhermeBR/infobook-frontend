@@ -50,6 +50,7 @@ const Home = () => {
                 onChange={evt => updateInputValue(evt)}
                 type="text"
                 placeholder="Search a book"
+                value={currentValue}
               />
             </Col>
             <Col xs={2}>
