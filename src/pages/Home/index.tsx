@@ -12,6 +12,7 @@ import { getBook } from '../../services/request'
 
 const Home = () => {
   const [currentOption, setCurrentOption] = useState('')
+  const [currentValue, setCurrenValue] = useState('')
 
   const options = [
     'Title',
@@ -24,8 +25,18 @@ const Home = () => {
   ]
 
   function findBook() {
-    const result = getBook('intitle', 'teste')
+    const result = getBook('intitle', currentValue)
     console.log('response', result)
+  }
+
+  function updateInputValue(
+    evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
+    setCurrenValue(evt.target.value)
+  }
+
+  function deleteInputValue() {
+    setCurrenValue('')
   }
 
   return (
@@ -35,7 +46,11 @@ const Home = () => {
         <Form>
           <Row>
             <Col>
-              <Form.Control type="text" placeholder="Search a book" />
+              <Form.Control
+                onChange={evt => updateInputValue(evt)}
+                type="text"
+                placeholder="Search a book"
+              />
             </Col>
             <Col xs={2}>
               <Form.Select>
@@ -49,7 +64,9 @@ const Home = () => {
         <ContainerButton>
           <Col>
             <FindButton onClick={() => findBook()}>Find 🔎</FindButton>
-            <ClearButton>Clear 💣</ClearButton>
+            <ClearButton onClick={() => deleteInputValue()}>
+              Clear 💣
+            </ClearButton>
           </Col>
         </ContainerButton>
       </ContainerSearch>
