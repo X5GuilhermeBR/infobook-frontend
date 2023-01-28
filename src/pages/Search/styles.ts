@@ -55,4 +55,28 @@ export const CardContainer = styled.div`
   padding: 1rem;
   overflow-x: auto;
   position: relative;
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: #fca311 transparent;
+  }
+
+  /* Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    height: 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #fca311 transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #fca311;
+    border-radius: 14px;
+    border: 0px none transparent;
+  }
 `

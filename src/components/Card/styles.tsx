@@ -33,6 +33,11 @@ export const CardContent = styled.div`
     color: ${COLORS.secondary};
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
+    max-height: 70px; /* Tamanho */
+    max-width: 210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   p {
