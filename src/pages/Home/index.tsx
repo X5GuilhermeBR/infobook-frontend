@@ -92,18 +92,6 @@ const Home = () => {
             </Col>
           </ContainerButton>
         </ContainerSearch>
-        <Toast show={toastError} onClose={toggleToastError}>
-          <Toast.Header>
-            <img
-              src="holder.js/20x20?text=%20"
-              className="rounded me-2"
-              alt=""
-            />
-            <strong className="me-auto">Error</strong>
-            <small>11 mins ago</small>
-          </Toast.Header>
-          <Toast.Body>Nenhum resultado encontrado</Toast.Body>
-        </Toast>
       </Wrapper>
     </>
   )
