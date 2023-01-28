@@ -1,22 +1,26 @@
 import React, { useContext, useState } from 'react'
 import { SearchDataContext } from '../../context/searchContext'
-import { Redirect, Title, Wrapper } from './styles'
+import { Header, Redirect, Title, Wrapper, WrapperSuccess } from './styles'
 
 const Search = () => {
-  const { dataResult } = useContext(SearchDataContext)
+  const { currentValue, currentSearchBy, dataResult } =
+    useContext(SearchDataContext)
 
   return (
     <>
-      <Wrapper>
-        {dataResult && dataResult.totalItems == 0 ? (
-          <>
-            <Title>{`sorry, we couldn't find any results for your search :(`}</Title>
-            <Redirect to="/">try again</Redirect>
-          </>
-        ) : (
-          <h1>tem resultado</h1>
-        )}
-      </Wrapper>
+      {dataResult && dataResult.totalItems == 0 ? (
+        <Wrapper>
+          <Title>{`sorry, we couldn't find any results for your search :(`}</Title>
+          <Redirect to="/">try again</Redirect>
+          {dataResult.totalItems}
+        </Wrapper>
+      ) : (
+        <WrapperSuccess>
+          <Header>
+            <Title>{`result to "${currentValue}" for "${currentSearchBy}"`}</Title>
+          </Header>
+        </WrapperSuccess>
+      )}
     </>
   )
 }

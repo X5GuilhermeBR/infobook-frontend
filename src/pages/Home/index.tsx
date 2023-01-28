@@ -13,10 +13,13 @@ import { SearchDataContext } from '../../context/searchContext'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
-  const [currentValue, setCurrenValue] = useState('')
-  const [currentSearchBy, setCurrentSearchBy] = useState('Title')
-  const [toastError, setToastError] = useState(false)
-  const { setDataResult } = useContext(SearchDataContext)
+  const {
+    currentValue,
+    setCurrentValue,
+    currentSearchBy,
+    setCurrentSearchBy,
+    setDataResult,
+  } = useContext(SearchDataContext)
   const navigate = useNavigate()
 
   const options = [
@@ -33,10 +36,6 @@ const Home = () => {
     setCurrentSearchBy(evt.target.value)
   }
 
-  function toggleToastError() {
-    setToastError(!toastError)
-  }
-
   function findBook() {
     getBook(currentSearchBy, currentValue).then(response => {
       setDataResult(response.data)
@@ -48,11 +47,11 @@ const Home = () => {
   function updateInputValue(
     evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    setCurrenValue(evt.target.value)
+    setCurrentValue(evt.target.value)
   }
 
   function clearSearch() {
-    setCurrenValue('')
+    setCurrentValue('')
     setCurrentSearchBy('Title')
   }
 
