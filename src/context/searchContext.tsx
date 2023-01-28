@@ -6,7 +6,7 @@ export const SearchDataContext = createContext<ISearchContext>(
 )
 
 export default function SearchProvider({ children }: SearchContextProps) {
-  const [dataResult, setDataResult] = useState<IDataResult | undefined>()
+  const [dataResult, setDataResult] = useState<IDataResult>({} as IDataResult)
   const [currentValue, setCurrentValue] = useState('')
   const [currentSearchBy, setCurrentSearchBy] = useState('Title')
 

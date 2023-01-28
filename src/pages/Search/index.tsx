@@ -10,9 +10,12 @@ import {
 } from './styles'
 import { useNavigate } from 'react-router-dom'
 import Card from '../../components/Card'
+import { ItemsProps } from '../../context/types'
 const Search = () => {
   const { currentValue, currentSearchBy, dataResult } =
     useContext(SearchDataContext)
+
+  const [items, setItems] = useState<ItemsProps[]>([])
 
   const navigate = useNavigate()
 
@@ -22,13 +25,22 @@ const Search = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (dataResult.totalItems) {
+      setItems(dataResult.items)
+    }
+  }, [dataResult])
+
+  useEffect(() => {
+    console.log('items', items)
+  }, [items])
+
   return (
     <>
       {dataResult && dataResult.totalItems == 0 ? (
         <Wrapper>
           <Title>{`sorry, we couldn't find any results for your search :(`}</Title>
           <Redirect to="/">try again</Redirect>
-          {dataResult.totalItems}
         </Wrapper>
       ) : (
         <WrapperSuccess>
@@ -36,30 +48,19 @@ const Search = () => {
             <Title>{`result to "${currentValue}" for "${currentSearchBy}"`}</Title>
           </Header>
           <CardContainer>
-            <Card
-              title="The Love Hypothesis"
-              author="teste"
-              page="90"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
-            <Card
-              title="The Love Hypothesis"
-              author="teste"
-              page="90"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
-            <Card
-              title="The Love Hypothesis"
-              author="teste"
-              page="90"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
-            <Card
-              title="The Love Hypothesis"
-              author="teste"
-              page="90"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
+            {items.map((item, i) => (
+              <Card
+                key={i}
+                title={item.volumeInfo.title}
+                author={item.volumeInfo.authors}
+                page={item.volumeInfo.pageCount}
+                imgUrl={
+                  item.volumeInfo.imageLinks
+                    ? item.volumeInfo.imageLinks.thumbnail
+                    : undefined
+                }
+              ></Card>
+            ))}
           </CardContainer>
         </WrapperSuccess>
       )}

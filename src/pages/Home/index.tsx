@@ -40,7 +40,6 @@ const Home = () => {
     getBook(currentSearchBy, currentValue).then(response => {
       setDataResult(response.data)
       navigate('/search')
-      console.log('response', response.data)
     })
   }
 

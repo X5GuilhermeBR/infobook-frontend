@@ -5,15 +5,23 @@ export interface ISearchContext {
   setCurrentValue: Dispatch<SetStateAction<string>>
   currentSearchBy: string
   setCurrentSearchBy: Dispatch<SetStateAction<string>>
-  dataResult: IDataResult | undefined
-  setDataResult: Dispatch<SetStateAction<IDataResult | undefined>>
+  dataResult: IDataResult
+  setDataResult: Dispatch<SetStateAction<IDataResult>>
 }
 
 interface volumeInfoProps {
+  imageLinks: imageLinksPropps
   title: string
+  authors: string[]
+  pageCount: number
 }
 
-interface ItemsProps {
+interface imageLinksPropps {
+  smallThumbnail: string
+  thumbnail: string
+}
+
+export interface ItemsProps {
   accessInfo: string
   etag: string
   id: string

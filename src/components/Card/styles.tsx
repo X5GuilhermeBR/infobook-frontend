@@ -11,6 +11,7 @@ export const CardCustom = styled.div`
   cursor: pointer;
   transition: all 250ms ease-in-out;
   max-width: 230px;
+  max-height: 390px;
 
   img {
     width: 250px;
