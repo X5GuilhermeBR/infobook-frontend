@@ -38,37 +38,26 @@ const Search = () => {
           <CardContainer>
             <Card
               title="The Love Hypothesis"
-              content="teste"
+              author="teste"
+              page="90"
               imgUrl="https://unsplash.it/198/199"
             ></Card>
             <Card
               title="The Love Hypothesis"
-              content="teste"
+              author="teste"
+              page="90"
               imgUrl="https://unsplash.it/198/199"
             ></Card>
             <Card
               title="The Love Hypothesis"
-              content="teste"
+              author="teste"
+              page="90"
               imgUrl="https://unsplash.it/198/199"
             ></Card>
             <Card
               title="The Love Hypothesis"
-              content="teste"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
-            <Card
-              title="The Love Hypothesis"
-              content="teste"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
-            <Card
-              title="The Love Hypothesis"
-              content="teste"
-              imgUrl="https://unsplash.it/198/199"
-            ></Card>
-            <Card
-              title="The Love Hypothesis"
-              content="teste"
+              author="teste"
+              page="90"
               imgUrl="https://unsplash.it/198/199"
             ></Card>
           </CardContainer>

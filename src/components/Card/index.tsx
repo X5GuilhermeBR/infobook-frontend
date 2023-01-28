@@ -1,18 +1,20 @@
 import React from 'react'
-import { CardCustom } from './styles'
+import { CardContent, CardCustom } from './styles'
 
 const Card = (props: {
   imgUrl: string | undefined
   alt?: any
   title: string
-  content: string
+  author: string
+  page: string
 }) => (
   <CardCustom>
     <img src={props.imgUrl} alt={props.alt || 'Image'} />
-    <div className="card-content">
-      <h2>{props.title}</h2>
-      <p>{props.content}</p>
-    </div>
+    <CardContent>
+      <h1>{props.title}</h1>
+      <p>By: {props.author}</p>
+      <p>{props.page} pages</p>
+    </CardContent>
   </CardCustom>
 )
 

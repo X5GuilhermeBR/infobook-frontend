@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { COLORS } from '../../styles/colors'
 
 export const CardCustom = styled.div`
   flex: 1 0 250px;
@@ -20,5 +21,24 @@ export const CardCustom = styled.div`
   &:hover {
     box-shadow: 0 4px 1rem -4px #000;
     transform: translateY(-3px);
+  }
+`
+
+export const CardContent = styled.div`
+  padding: 5px;
+
+  h1 {
+    font-size: 30px;
+    color: ${COLORS.secondary};
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    color: ${COLORS.secondary};
+    font-family: 'Inconsolata', monospace;
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 `
