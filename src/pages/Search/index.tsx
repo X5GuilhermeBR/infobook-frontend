@@ -1,10 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { SearchDataContext } from '../../context/searchContext'
 import { Header, Redirect, Title, Wrapper, WrapperSuccess } from './styles'
-
+import { useNavigate } from 'react-router-dom'
 const Search = () => {
   const { currentValue, currentSearchBy, dataResult } =
     useContext(SearchDataContext)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!currentValue) {
+      navigate('/')
+    }
+  }, [])
 
   return (
     <>
