@@ -1,7 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { SearchDataContext } from '../../context/searchContext'
-import { Header, Redirect, Title, Wrapper, WrapperSuccess } from './styles'
+import {
+  CardContainer,
+  Header,
+  Redirect,
+  Title,
+  Wrapper,
+  WrapperSuccess,
+} from './styles'
 import { useNavigate } from 'react-router-dom'
+import Card from '../../components/Card'
 const Search = () => {
   const { currentValue, currentSearchBy, dataResult } =
     useContext(SearchDataContext)
@@ -27,6 +35,43 @@ const Search = () => {
           <Header>
             <Title>{`result to "${currentValue}" for "${currentSearchBy}"`}</Title>
           </Header>
+          <CardContainer>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+            <Card
+              title="The Love Hypothesis"
+              content="teste"
+              imgUrl="https://unsplash.it/198/199"
+            ></Card>
+          </CardContainer>
         </WrapperSuccess>
       )}
     </>

@@ -47,3 +47,12 @@ export const Header = styled.div`
   margin-left: 5%;
   margin-top: 6%;
 `
+
+export const CardContainer = styled.div`
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  padding: 1rem;
+  overflow-x: auto;
+  position: relative;
+`
