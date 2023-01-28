@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import {
   ClearButton,
   ContainerButton,
@@ -9,12 +9,15 @@ import {
 } from './styles'
 import { Toast, Col, Form, Row } from 'react-bootstrap'
 import { getBook } from '../../services/request'
+import { SearchDataContext } from '../../context/searchContext'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [currentValue, setCurrenValue] = useState('')
   const [currentSearchBy, setCurrentSearchBy] = useState('Title')
-  const [dataResult, setDataResult] = useState('')
   const [toastError, setToastError] = useState(false)
+  const { setDataResult } = useContext(SearchDataContext)
+  const navigate = useNavigate()
 
   const options = [
     'Title',
@@ -37,9 +40,7 @@ const Home = () => {
   function findBook() {
     getBook(currentSearchBy, currentValue).then(response => {
       setDataResult(response.data)
-      if (response.data.totalItems == 0) {
-        setToastError(true)
-      }
+      navigate('/search')
       console.log('response', response.data)
     })
   }
@@ -59,18 +60,6 @@ const Home = () => {
     <>
       <Wrapper>
         <ContainerSearch>
-          <Toast show={toastError} onClose={toggleToastError}>
-            <Toast.Header>
-              <img
-                src="holder.js/20x20?text=%20"
-                className="rounded me-2"
-                alt=""
-              />
-              <strong className="me-auto">Error</strong>
-              <small>11 mins ago</small>
-            </Toast.Header>
-            <Toast.Body>Nenhum resultado encontrado</Toast.Body>
-          </Toast>
           <Title>infobook!📚</Title>
 
           <Form>
@@ -103,6 +92,18 @@ const Home = () => {
             </Col>
           </ContainerButton>
         </ContainerSearch>
+        <Toast show={toastError} onClose={toggleToastError}>
+          <Toast.Header>
+            <img
+              src="holder.js/20x20?text=%20"
+              className="rounded me-2"
+              alt=""
+            />
+            <strong className="me-auto">Error</strong>
+            <small>11 mins ago</small>
+          </Toast.Header>
+          <Toast.Body>Nenhum resultado encontrado</Toast.Body>
+        </Toast>
       </Wrapper>
     </>
   )

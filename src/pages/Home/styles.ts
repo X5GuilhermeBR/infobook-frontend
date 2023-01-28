@@ -4,7 +4,6 @@ import background from '../../images/svg/background.svg'
 import { COLORS } from '../../styles/colors'
 
 export const Wrapper = styled.section`
-  padding: 2em;
   background: #14213a;
   align-items: center;
   display: flex;
