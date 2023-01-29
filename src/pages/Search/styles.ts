@@ -39,7 +39,7 @@ export const Redirect = styled(Link)`
 `
 export const Title = styled.h1`
   font-size: 36px;
-  color: ${COLORS.primary};
+  color: ${COLORS.secondary};
   font-family: 'Inconsolata', monospace;
 `
 

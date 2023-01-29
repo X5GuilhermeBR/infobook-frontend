@@ -18,11 +18,27 @@ export const Wrapper = styled.section`
 
 export const WrapperSuccess = styled.section`
   background: #14213a;
+  align-items: center;
+  display: flex;
+  justify-content: center;
   background-image: url(${background});
   min-height: 100%;
   width: 100%;
   position: fixed;
-  flex-direction: column;
+`
+
+export const ContainerBook = styled.section`
+  padding: 20px;
+  height: 500px;
+  background: white;
+  width: 70%;
+  overflow-y: scroll;
+
+  p {
+    font-size: 18px;
+    color: ${COLORS.secondary};
+    font-family: 'Inconsolata', monospace;
+  }
 `
 
 export const Redirect = styled(Link)`
@@ -43,40 +59,16 @@ export const Title = styled.h1`
   font-family: 'Inconsolata', monospace;
 `
 
-export const Header = styled.div`
-  margin-left: 5%;
-  margin-top: 6%;
+export const Header = styled.h1`
+  display: flex;
 `
 
-export const CardContainer = styled.div`
+export const InfoBook = styled.div`
   margin-left: 30px;
-  margin-right: 30px;
-  display: flex;
-  padding: 1rem;
-  overflow-x: auto;
-  position: relative;
 
-  /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  & {
-    scrollbar-width: thin;
-    scrollbar-color: #fca311 transparent;
-  }
-
-  /* Chrome, Edge, and Safari */
-  &::-webkit-scrollbar {
-    height: 5px;
-    scrollbar-width: thin;
-    scrollbar-color: #fca311 transparent;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #fca311;
-    border-radius: 14px;
-    border: 0px none transparent;
+  p {
+    font-size: 14px;
+    color: ${COLORS.secondary};
+    font-family: 'Inconsolata', monospace;
   }
 `

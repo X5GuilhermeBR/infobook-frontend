@@ -13,7 +13,10 @@ interface volumeInfoProps {
   imageLinks: imageLinksPropps
   title: string
   authors: string[]
+  categories: string[]
   pageCount: number
+  description: string
+  publishedDate: string
 }
 
 interface imageLinksPropps {
