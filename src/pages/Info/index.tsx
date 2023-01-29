@@ -14,7 +14,10 @@ import { ItemsProps } from '../../context/types'
 const Info = () => {
   return (
     <>
-      <h1>teste</h1>
+      <Wrapper>
+        <Title>{`sorry, we couldn't find any results for your search :(`}</Title>
+        <Redirect to="/">try again</Redirect>
+      </Wrapper>
     </>
   )
 }

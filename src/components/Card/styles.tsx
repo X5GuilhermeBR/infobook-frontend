@@ -1,5 +1,10 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { COLORS } from '../../styles/colors'
+
+export const Redirect = styled(Link)`
+  text-decoration: none !important;
+`
 
 export const CardCustom = styled.div`
   flex: 1 0 250px;

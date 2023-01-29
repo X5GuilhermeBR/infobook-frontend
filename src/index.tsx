@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import SearchProvider from './context/searchContext'
+import Info from './pages/Info'
 
 const root = ReactDOM.createRoot(document.getElementById('root')!)
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/search',
     element: <Search />,
+  },
+  {
+    path: '/search/:id',
+    element: <Info />,
   },
 ])
 

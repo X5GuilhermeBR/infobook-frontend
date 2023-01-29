@@ -52,13 +52,18 @@ const Search = () => {
               <Card
                 key={i}
                 title={item.volumeInfo.title}
-                author={item.volumeInfo.authors}
+                author={
+                  item.volumeInfo.authors
+                    ? item.volumeInfo.authors[0]
+                    : 'no registry'
+                }
                 page={item.volumeInfo.pageCount}
                 imgUrl={
                   item.volumeInfo.imageLinks
                     ? item.volumeInfo.imageLinks.thumbnail
                     : undefined
                 }
+                id={item.id}
               ></Card>
             ))}
           </CardContainer>
