@@ -31,10 +31,6 @@ const Search = () => {
     }
   }, [dataResult])
 
-  useEffect(() => {
-    console.log('items', items)
-  }, [items])
-
   return (
     <>
       {dataResult && dataResult.totalItems == 0 ? (

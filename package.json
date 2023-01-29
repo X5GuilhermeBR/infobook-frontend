@@ -15,6 +15,7 @@
     "axios": "^1.2.4",
     "babel-install": "^2.1.0",
     "bootstrap": "^5.2.3",
+    "env-cmd": "^10.1.0",
     "eslint-plugin-flowtype": "^8.0.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -29,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "dev": "react-scripts start",
+    "dev": "env-cmd -f ./.env react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

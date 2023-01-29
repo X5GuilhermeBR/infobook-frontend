@@ -8,7 +8,7 @@ import {
   Wrapper,
 } from './styles'
 import { Toast, Col, Form, Row } from 'react-bootstrap'
-import { getBook } from '../../services/request'
+import { getBooks } from '../../services/request'
 import { SearchDataContext } from '../../context/searchContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -37,7 +37,7 @@ const Home = () => {
   }
 
   function findBook() {
-    getBook(currentSearchBy, currentValue).then(response => {
+    getBooks(currentSearchBy, currentValue).then(response => {
       setDataResult(response.data)
       navigate('/search')
     })
