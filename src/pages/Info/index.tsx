@@ -12,6 +12,7 @@ import { useParams } from 'react-router-dom'
 import { ItemsProps } from '../../context/types'
 import { getBookById } from '../../services/request'
 import { Markup } from 'interweave'
+import NavBar from '../../components/Navbar'
 
 const Info = () => {
   const [book, setBook] = useState<ItemsProps>()
@@ -39,6 +40,7 @@ const Info = () => {
   } else {
     return (
       <>
+        <NavBar />
         {book === undefined ? (
           <Wrapper>
             <Title>{`sorry, we couldn't find any results for your search :(`}</Title>

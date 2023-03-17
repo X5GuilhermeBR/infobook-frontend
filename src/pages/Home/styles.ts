@@ -1,10 +1,8 @@
-import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 import background from '../../images/svg/background.svg'
 import { COLORS } from '../../styles/colors'
 
 export const Wrapper = styled.section`
-  background: #14213a;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -14,48 +12,15 @@ export const Wrapper = styled.section`
   position: fixed;
 `
 
-export const ContainerSearch = styled.div`
-  width: 70%;
-`
-
-export const Title = styled.h1`
-  font-size: 36px;
-  color: #fca311;
+export const Wellcome = styled.div`
+  padding: 40px;
+  width: 80%;
+  background-color: ${COLORS.third};
   font-family: 'Inconsolata', monospace;
-`
+  font-size: 20px;
 
-export const ContainerButton = styled.div`
-  margin-top: 15px;
-
-  button {
-    margin-right: 7px;
-  }
-
-  button:hover {
-    transform: scale(1.1);
-  }
-`
-
-export const FindButton = styled(Button)`
-  background-color: ${COLORS.primary};
-  border-color: white;
-  transition: transform 0.4s ease;
-
-  &:hover {
-    background-color: ${COLORS.primary};
-    border-color: white;
-  }
-`
-
-export const ClearButton = styled(Button)`
-  background-color: white;
-  border-color: ${COLORS.primary};
-  color: ${COLORS.primary};
-  transition: transform 0.6s ease;
-
-  &:hover {
-    background-color: white;
-    border-color: ${COLORS.primary};
-    color: ${COLORS.primary};
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
   }
 `

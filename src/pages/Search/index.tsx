@@ -11,6 +11,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 import Card from '../../components/Card'
 import { ItemsProps } from '../../context/types'
+import NavBar from '../../components/Navbar'
 const Search = () => {
   const { currentValue, currentSearchBy, dataResult } =
     useContext(SearchDataContext)
@@ -28,11 +29,16 @@ const Search = () => {
   useEffect(() => {
     if (dataResult.totalItems) {
       setItems(dataResult.items)
+      localStorage.setItem(
+        'dataResultHistory',
+        JSON.stringify(dataResult.items)
+      )
     }
   }, [dataResult])
 
   return (
     <>
+      <NavBar />
       {dataResult && dataResult.totalItems == 0 ? (
         <Wrapper>
           <Title>{`sorry, we couldn't find any results for your search :(`}</Title>

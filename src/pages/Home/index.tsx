@@ -1,23 +1,19 @@
 import React, { useState, useContext } from 'react'
-import {
-  ClearButton,
-  ContainerButton,
-  ContainerSearch,
-  FindButton,
-  Title,
-  Wrapper,
-} from './styles'
-import { Toast, Col, Form, Row, Navbar } from 'react-bootstrap'
-import { getBooks } from '../../services/request'
-import { SearchDataContext } from '../../context/searchContext'
-import { useNavigate } from 'react-router-dom'
+import { Wellcome, Wrapper } from './styles'
 import NavBar from '../../components/Navbar'
 
 const Home = () => {
   return (
     <>
       <NavBar />
-      <Wrapper></Wrapper>
+      <Wrapper>
+        <Wellcome>
+          <h1>Welcome to infobook!</h1>
+          The infobook is the newest platform to search for books cataloged by
+          the "google book" API. Here you can carry out your searches in an easy
+          and intuitive way. Learn all about your favorite book.
+        </Wellcome>
+      </Wrapper>
     </>
   )
 }
